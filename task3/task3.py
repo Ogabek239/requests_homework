@@ -22,3 +22,21 @@ Your implementation below:
 """
 
 # Your implementation here
+import requests
+
+def create_post(title, body, user_id):
+    url = "https://jsonplaceholder.typicode.com/posts"
+    data = {
+    "title": "My Homework",
+    "body": "I am learning requests!",
+    "userId": 1,
+    "id": 101
+    }
+    
+    response = requests.post(url, json = data)
+    return response.json()
+
+
+
+result = create_post("My Homework", "I am learning requests!", 1)
+print(result)
