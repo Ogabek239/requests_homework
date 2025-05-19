@@ -32,3 +32,18 @@ Your implementation below:
 """
 
 # Your implementation here
+def get_post_data():
+    response = requests.post(
+        f"https://jsonplaceholder.typicode.com/posts/{post_id}"
+        json={
+            "title": "My Homework",
+            "body": "I am learning requests",
+            "userid": 1,
+            "id": 102,
+        },
+    )
+
+    return response.json()
+
+data = get_post_data()
+print(data)
