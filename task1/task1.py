@@ -19,3 +19,12 @@ Your implementation below:
 """
 
 # Your implementation here
+import requests
+
+def get_post_data(post_id):
+    respons = requests.get(f"https://jsonplaceholder.typicode.com/posts/{post_id}")
+
+    return respons.json()
+
+data = get_post_data(2)
+print(data)
